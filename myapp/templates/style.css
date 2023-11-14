@@ -8,23 +8,24 @@
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
-    background: url('img.jpg') no-repeat;
+    background: url('img1.jpg') no-repeat center bottom;
     background-size: cover;
-    background-position: center;
+    background-position: cover;
 }
 
 .wrapper {
     width: 420px;
-    background: palevioletred;
+    background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    margin-right: 50px;
 }
 
 .wrapper h1{
