@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
 
@@ -9,8 +7,7 @@ class Manufacturer(models.Model):
     ContactInfo = models.TextField()
     class Meta:
         verbose_name_plural = 'manufacturers'
-    def __str__(self):
-        return self.name
+    
     
 
 class Products(models.Model):
@@ -25,5 +22,3 @@ class Products(models.Model):
     YearManufactured = models.DateField()
     class Meta:
         verbose_name_plural = 'product'
-    def __str__(self):
-        return self.title
