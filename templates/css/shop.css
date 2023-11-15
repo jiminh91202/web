@@ -19,7 +19,7 @@ body {
     margin: 10px 0;
 }
 .motorbike-list {
-    display: none;
+    display: block;
 }
 .motorbike-item {
     font-size: 16px;
