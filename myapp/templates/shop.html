@@ -1,0 +1,49 @@
+   {% extends "master.html" %}
+   {% block title %} bán xe {% endblock title %}
+   {% block content %}
+      <!-- portfolio -->
+      <h1 style="text-align: center; font-size: 36px;">Mục lục<br></h1>
+      <div class="brand-list">
+         <div class="brand-item" onclick="showMotorbikes('honda')">
+               <h2>Honda</h2>
+               <div id="honda" class="motorbike-list">
+                  <div class="motorbike-item">CBR650</div>
+                  <div class="motorbike-item">CRF150</div>
+                  <div class="motorbike-item">CBR250</div>
+               </div>
+         </div>
+         <div class="brand-item" onclick="showMotorbikes('yamaha')">
+               <h2>Yamaha</h2>
+               <div id="yamaha" class="motorbike-list">
+                  <div class="motorbike-item">DS7</div>
+                  <div class="motorbike-item">DT50MX</div>
+                  <div class="motorbike-item">FS1</div>
+               </div>
+         </div>
+         <div class="brand-item" onclick="showMotorbikes('suzuki')">
+               <h2>Suzuki</h2>
+               <div id="suzuki" class="motorbike-list">
+                  <div class="motorbike-item">GSX-S750</div>
+                  <div class="motorbike-item">SV650</div>
+                  <div class="motorbike-item">GSX-R1000</div>
+               </div>
+         </div>
+         <div class="brand-item" onclick="showMotorbikes('kawasaki')">
+               <h2>Kawasaki</h2>
+               <div id="kawasaki" class="motorbike-list">
+                  <div class="motorbike-item">Ninja ZX-RR</div>
+                  <div class="motorbike-item">KR250</div>
+                  <div class="motorbike-item">Ninja ZX-11</div>
+               </div>
+         </div>
+      </div>
+      <script>
+         function showMotorbikes(brand) {
+             var motorbikeLists = document.getElementsByClassName('motorbike-list');
+             for (var i = 0; i < motorbikeLists.length; i++) {
+                 motorbikeLists[i].style.display = 'none';
+             }
+             document.getElementById(brand).style.display = 'block';
+         }
+   </script>
+   {% endblock%}
