@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,11 +78,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+<<<<<<< HEAD:core/settings.py
         'NAME': BASE_DIR / 'db.sqlite3',
+=======
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+>>>>>>> Naolia_v3:manager/settings.py
     }
 }
 
 
+<<<<<<< HEAD:core/settings.py
+=======
+
+
+
+>>>>>>> Naolia_v3:manager/settings.py
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
