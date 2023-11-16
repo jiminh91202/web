@@ -371,7 +371,7 @@ ul.email li i {
 /** banner_main **/
 
 #top_section {
-     background-image: url('../images/banner.jpg');
+     background-image: url('../images/about_bg.jpg');
      background-size: cover;
      background-repeat: no-repeat;
      padding-top: 120px;
@@ -410,13 +410,13 @@ ul.email li i {
 }
 
 .bluid {
-     margin-top: 10px;
+     margin-bottom: 20px;
      font-family: 'Open Sans', sans-serif;
      text-align: left;
 }
 
 .banner_main .bluid h1 {
-     color: #fff;
+     color: #a92e2e;
      font-size: 100px;
      line-height: 110px;
      font-weight: bold;
@@ -424,29 +424,29 @@ ul.email li i {
 }
 
 .banner_main .bluid p {
-     color: #fff;
+     color: #043067;
      line-height: 25px;
      font-weight: 500;
      padding-bottom: 50px;
-     font-size: 17px;
+     font-size: 27px;
 }
 
 .banner_main .bluid .read_more {
      margin-right: 8px;
-     background: #fff;
+     background: #068e57;
      color: #000;
 }
 
 .banner_main .bluid .read_more:hover {
-     color: #fff;
-     background: #0e0b01;
+     color: #9f1010;
+     background: #eae4e7;
 }
 
 
 /** we_do **/
 
 .we_do {
-     background: #fff;
+     background: #d98383;
      padding: 90px 0 190px 0;
 }
 
@@ -541,9 +541,10 @@ ul.email li i {
 /** about **/
 
 .about {
-     background: url(../images/about_bg.jpg);
+     background: url(../images/banner1.jpg);
      background-position: center;
      background-repeat: no-repeat;
+     background-size: cover;
      height: 100vh;
      padding: 90px 0;
 }
@@ -558,15 +559,17 @@ ul.email li i {
 }
 
 .about .titlepage h2 {
-     color: #4e76ec;
+     color: rgb(244, 234, 241);
      text-align: left;
+     padding-left: 70px;
 }
 
 .about .titlepage p {
      line-height: 28px;
-     padding-top: 20px;
-     color: rgb(13, 60, 232);
-     font-size: 40px;
+     padding-top: 50px;
+     padding-left: 70px;
+     color: rgb(246, 237, 243);
+     font-size: 30px;
      text-align: left;
 }
 
