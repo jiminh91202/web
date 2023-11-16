@@ -1,51 +1,37 @@
 from django.db import models
 # Create your models here.
 
-class Manufacturers(models.Model):
-    ManufacturerID = models.AutoField(primary_key=True)
-    ManufacturerName = models.CharField(max_length=255)
-    ContactInfo = models.TextField()
+from django.db import models
 
-class Products(models.Model):
-    ProductID = models.AutoField(primary_key=True)
-    ProductName = models.CharField(max_length=255)
-    Description = models.TextField()
-    Price = models.DecimalField(max_digits=10, decimal_places=2)
-    QuantityInStock = models.IntegerField()
-    ImageURL = models.CharField(max_length=255)
-    Specifications = models.TextField()
-    ManufacturerID = models.ForeignKey(Manufacturers, on_delete=models.CASCADE)
-    YearManufactured = models.DateField()
+class Brand(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
+    
 
-class Customers(models.Model):
-    CustomerID = models.AutoField(primary_key=True)
-    Name = models.CharField(max_length=255)
-    Email = models.CharField(max_length=255)
-    PhoneNumber = models.CharField(max_length=255)
-    ShippingAddress = models.TextField()
+class Motorbike(models.Model):
+    name = models.CharField(max_length=255)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=14, decimal_places=2)
 
-class Orders(models.Model):
-    OrderID = models.AutoField(primary_key=True)
-    CustomerID = models.ForeignKey(Customers, on_delete=models.CASCADE)
-    OrderDate = models.DateField()
-    OrderStatus = models.CharField(max_length=255)
-    ShippingInfo = models.TextField()
+    def __str__(self):
+        return self.name
 
-class OrderDetails(models.Model):
-    OrderID = models.ForeignKey(Orders, on_delete=models.CASCADE)
-    ProductID = models.ForeignKey(Products, on_delete=models.CASCADE)
-    Quantity = models.IntegerField()
-    Price = models.DecimalField(max_digits=10, decimal_places=2)
 
-class Employees(models.Model):
-    EmployeeID = models.AutoField(primary_key=True)
-    Name = models.CharField(max_length=255)
-    Position = models.CharField(max_length=255)
-    ContactInfo = models.TextField()
+class Customer(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    def __str__(self):
+        return self.name
+    
 
-class CustomerReviews(models.Model):
-    ReviewID = models.AutoField(primary_key=True)
-    CustomerID = models.ForeignKey(Customers, on_delete=models.CASCADE)
-    ProductID = models.ForeignKey(Products, on_delete=models.CASCADE)
-    ReviewContent = models.TextField()
-    Rating = models.IntegerField()
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    motorbike = models.ForeignKey(Motorbike, on_delete=models.CASCADE)
+    order_date = models.DateField()
+
+    def __str__(self):
+        return f"Order {self.id}: {self.motorbike.name} for {self.customer.name} on {self.order_date}"
+
+    

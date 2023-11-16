@@ -1026,3 +1026,30 @@ ul.social_icon li a:hover {
 .inner_page .about {
      margin: 90px 0;
 }
+
+}
+.brand-list {
+    display: flex;
+    justify-content: space-between;
+}
+.brand-item {
+    flex-basis: calc(25% - 20px);
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+   
+}
+.brand-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.motorbike-list {
+    display: none;
+}
+.motorbike-item {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
