@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Đăng nhập</h1>
+            <div class="input-box">
+                {{ form.username }}
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password }}
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="{{ form.remember_me.name }}" id="{{ form.remember_me.id }}">Ghi nhớ đăng nhập</label>
+                <a href="#">Quên mật khẩu ?</a>
+            </div>
+            <button type="submit" class="btn">Đăng ký</button>
+            <div class="register-link">
+                <p>Chưa có tài khoản? <a 
+                href="{% url 'register' %}">Đăng ký</a></p>
+            </div>
+        </form> 
+
+    </div>
+</body>
+</html>
