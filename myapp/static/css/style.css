@@ -1052,11 +1052,7 @@ ul.social_icon li a:hover {
      flex-direction: row;
 }
   
-.brand-item:hover .motorbike-list {
-     display: flex;
-}
-  
 .motorbike-item {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }

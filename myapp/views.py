@@ -1,11 +1,12 @@
 from django.template import loader
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Motorbike
+from .models import *
 # Create your views here.
 def shop(request):
-    template = loader.get_template('shop.html')
-    return HttpResponse(template.render())
+    brands = Brand.objects.all()
+    context = {'brands': brands}
+    return render(request, 'shop.html', context)
 
 def about(request):
     template = loader.get_template('about.html')

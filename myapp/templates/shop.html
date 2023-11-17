@@ -5,7 +5,7 @@
    <h1 style="text-align: center; font-size: 36px;">Mục lục<br></h1>
    <div class="brand-list">
       {% for brand in brands %}
-      <div class="brand-item" onmouseover="showMotorbikes('{{ brand.name }}')">
+      <div class="brand-item" onclick="showMotorbikes('{{ brand.name }}')">
          <h2>{{ brand.name }}</h2>
          <div id="{{ brand.name }}" class="motorbike-list">
             {% for motorbike in brand.motorbike_set.all %}
@@ -13,18 +13,17 @@
             {% endfor %}
          </div>
       </div>
-      {% endfor %}      
+      {% endfor %}
    </div>
    <!-- end portfolio -->
    <!-- Javascript files-->
    <script>
       function showMotorbikes(brand) {
-         var x = document.getElementById(brand);
-         if (x.style.display === "none") {
-            x.style.display = "flex";
-         } else {
-            x.style.display = "none";
-         }
+          var motorbikeLists = document.getElementsByClassName('motorbike-list');
+          for (var i = 0; i < motorbikeLists.length; i++) {
+              motorbikeLists[i].style.display = 'none';
+          }
+          document.getElementById(brand).style.display = 'block';
       }
-   </script>
+</script>
 {% endblock%}
