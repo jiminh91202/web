@@ -11,6 +11,7 @@
 
 <body>
     <div class="wrapper">
+<<<<<<< HEAD:myapp/templates/register.html
         <form action="">
             <h1>Đăng ký</h1>
             <div class="input-box">
@@ -32,6 +33,26 @@
                 <input type="text" placeholder="Nhập lại mật khẩu"
                 required>
                 <i class='bx bxs-user'></i>
+=======
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Đăng ký</h1>
+            <div class="input-box">
+                {{ form.username }}
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                {{ form.email }}
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password1 }}
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password2 }}
+                <i class='bx bxs-lock-alt'></i>
+>>>>>>> Naolia_v3:frontend/register.html
             </div>
             
             <button type="submit" class="btn">Đăng ký</button>
@@ -40,4 +61,8 @@
 
     </div>
 </body>
+<<<<<<< HEAD:myapp/templates/register.html
 </html>
+=======
+</html>
+>>>>>>> Naolia_v3:frontend/register.html
