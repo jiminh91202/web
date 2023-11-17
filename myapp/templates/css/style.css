@@ -1028,7 +1028,6 @@ ul.social_icon li a:hover {
      margin: 90px 0;
 }
 
-}
 .brand-list {
     display: flex;
     justify-content: space-between;
@@ -1047,9 +1046,16 @@ ul.social_icon li a:hover {
     font-size: 18px;
     margin: 10px 0;
 }
+
 .motorbike-list {
-    display: none;
+     display: none;
+     flex-direction: row;
 }
+  
+.brand-item:hover .motorbike-list {
+     display: flex;
+}
+  
 .motorbike-item {
     font-size: 16px;
     margin-bottom: 10px;
