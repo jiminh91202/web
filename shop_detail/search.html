@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+    
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .product.show {
+            display: block;
+        }
+
+        h2, p {
+            color: #333;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+        
+        <div id="productList">
+            <div class="product" onclick="redirectToProductDetail('DUCATI 899 Panigale 2015.html')">
+                <h2>DUCATI 899 Panigale 2015</h2>
+                <p>Còn hàng</p>
+            </div>
+
+            <div class="product" onclick="redirectToProductDetail('hondaCBR250R.html')">
+                <h2>hondaCBR250R</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('hondaCBR500R.html')">
+                <h2>hondaCBR500R</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('hondaCBR1000R.html')">
+                <h2>hondaCBR1000R</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('Kawasaki Ninja 125.html')">
+                <h2>Kawasaki Ninja 125</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('Kawasaki Ninja 250r.html')">
+                <h2>Kawasaki Ninja 250r</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('Kawasaki Ninja ZX-10RR.html')">
+                <h2>Kawasaki Ninja ZX-10RR</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('YAMAHA YZF-R3.html')">
+                <h2>YAMAHA YZF-R3</h2>
+                <p>Còn hàng</p>
+            </div>
+            <div class="product" onclick="redirectToProductDetail('YAMAHA YZF-R15.html')">
+                <h2>YAMAHA YZF-R15</h2>
+                <p>Còn hàng</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function () {
+            var searchQuery = this.value.toLowerCase();
+            var products = document.querySelectorAll('.product');
+
+            products.forEach(function (product) {
+                var productName = product.querySelector('h2').textContent.toLowerCase();
+                var productDescription = product.querySelector('p').textContent.toLowerCase();
+
+                if (productName.includes(searchQuery) || productDescription.includes(searchQuery)) {
+                    product.classList.add('show');
+                } else {
+                    product.classList.remove('show');
+                }
+            });
+        });
+
+        function redirectToProductDetail(productPage) {
+            window.location.href = productPage;
+        }
+    </script>
+
+</body>
+
+</html>
