@@ -9,7 +9,9 @@
          <h2>{{ brand.name }}</h2>
          <div id="{{ brand.name }}" class="motorbike-list">
             {% for motorbike in brand.motorbike_set.all %}
-            <div class="motorbike-item">{{ motorbike.name }}</div>
+            <div class="motorbike-item">
+               <a href="{% url 'details' id=motorbike.ID %}">{{ motorbike.name }}</a>
+            </div>
             {% endfor %}
          </div>
       </div>
@@ -25,5 +27,5 @@
           }
           document.getElementById(brand).style.display = 'block';
       }
-</script>
-{% endblock%}
+   </script>
+{% endblock %}

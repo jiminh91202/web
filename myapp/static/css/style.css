@@ -290,7 +290,7 @@ loader
 }
 
 .loader img {
-     width: 280px;
+     width: 180px;
 }
 
 
@@ -375,7 +375,7 @@ ul.email li i {
      background-image: url('../images/about_bg.jpg');
      background-size: cover;
      background-repeat: no-repeat;
-     padding-top: 120px;
+     padding-top: 10px;
      position: relative;
      height: 100vh;
      background-position: center;

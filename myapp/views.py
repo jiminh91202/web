@@ -2,6 +2,8 @@ from django.template import loader
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
+
+
 # Create your views here.
 def shop(request):
     brands = Brand.objects.all()
@@ -36,18 +38,11 @@ def news(request):
     template = loader.get_template('news.html')
     return HttpResponse(template.render())
 
-def members(request):
-  mymembers = Motorbike.objects.all().values()
-  template = loader.get_template('all_members.html')
-  context = {
-    'motor': mymembers,
-  }
-  return HttpResponse(template.render(context, request))
-  
+
 def details(request, id):
-  mymember = Motorbike.objects.get(ID=id)
-  template = loader.get_template('details.html')
-  context = {
-    'motor': mymember,
-  }
-  return HttpResponse(template.render(context, request))
+    motorbike = Motorbike.objects.get(ID=id)
+    template = loader.get_template('details.html')
+    context = {
+        'motorbike': motorbike,
+    }
+    return HttpResponse(template.render(context, request))
