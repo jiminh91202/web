@@ -1,7 +1,8 @@
 from django.template import loader
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render, redirect
 from .models import *
+from .forms import RegistrationForm
 
 
 # Create your views here.
@@ -46,3 +47,12 @@ def details(request, id):
         'motorbike': motorbike,
     }
     return HttpResponse(template.render(context, request))
+
+def register(request):
+    form = RegistrationForm()
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    return render(request, 'register.html', {'form': form})
