@@ -1,95 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>hightech</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- awesome fontfamily -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout inner_page">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="" /></div>
-      </div>
-      <!-- end loader -->
-      <!-- header -->
-      <header>
-         <div class="header">
-            <div class="container-fluid">
-               <div class="row d_flex">
-                  <div class=" col-md-2 col-sm-3 col logo_section">
-                     <div class="full">
-                        <div class="center-desk">
-                           <div class="logo">
-                              <a href="index.html"><img src="images/logo_footer.png" alt="#" /></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-8 col-sm-9">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item">
-                                 <a class="nav-link" href="homepage.html">Trang chủ</a>
-                              </li>
-                              <li class="nav-item active">
-                                 <a class="nav-link" href="about.html">Giới thiệu</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="service.html">Dịch vụ</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="shop.html">Xe PKL </a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Liên hệ</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="login.html">Đăng nhập</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="register.html">Đăng ký</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-                  
-                  <div class="col-md-2 d_none">
-                     <ul class="email text_align_right">
-                        <li> <a href="Javascript:void(0)"> <i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"> </i></a> </li>
-                     </ul>
-                  </div>
-                  
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- end header -->
-      <!-- about -->
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Về chúng tôi{% endblock title %}
+{% block content %}
+
       <div class="about">
          <div class="container">
             <div class="row">
@@ -103,109 +16,36 @@
          </div>
       </div>
       <!-- end about -->
-      <!-- footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-3">
-                     <a class="logo_footer" href="index.html"><img src="images/logo_footer.png" alt="#" /></a>
-                  </div>
-                  <div class="col-md-9">
-                     <form class="newslatter_form">
-                        <input class="ente" placeholder="Enter your email" type="text" name="Enter your email">
-                        <button class="subs_btn">Sbscribe Now</button>
-                     </form>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <div class="Informa helpful">
-                        <h3>Useful  Link</h3>
-                        <ul>
-                           <li><a href="index.html">Home</a></li>
-                           <li><a href="about.html">About</a></li>
-                           <li><a href="we_do.html">What we do</a></li>
-                           <li><a href="portfolio.html">Portfolio</a></li>
-                           <li><a href="contact.html">Contact us</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <div class="Informa">
-                        <h3>News</h3>
-                        <ul>
-                           <li>It is a long established                            
-                           </li>
-                           <li>fact that a reader will                           
-                           </li>
-                           <li>be distracted by the                           
-                           </li>
-                           <li>readable content of a                              
-                           </li>
-                           <li>page when                          
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <div class="Informa">
-                        <h3>company</h3>
-                        <ul>
-                           <li>It is a long established                             
-                           </li>
-                           <li>fact that a reader will                            
-                           </li>
-                           <li>be distracted by the                          
-                           </li>
-                           <li>readable content of a                              
-                           </li>
-                           <li>page when                          
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <div class="Informa conta">
-                        <h3>contact Us</h3>
-                        <ul>
-                           <li> <a href="Javascript:void(0)"> <i class="fa fa-map-marker" aria-hidden="true"></i> Location
-                              </a>
-                           </li>
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-phone" aria-hidden="true"></i> Call +01 1234567890
-                              </a>
-                           </li>
-                           <li> <a href="Javascript:void(0)"> <i class="fa fa-envelope" aria-hidden="true"></i> demo@gmail.com
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright text_align_left">
-               <div class="container">
-                  <div class="row d_flex">
-                     <div class="col-md-6">
-                        <p>© 2020 All Rights Reserved.  <a href="https://html.design/"> Free Html Template</a></p>
-                     </div>
-                     <div class="col-md-6">
-                        <ul class="social_icon text_align_center">
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                           <li> <a href="Javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>
+      <section>
+         <img src="{% static 'images/about7.png' %}" alt="gioi-thieu1">
+         <h2>Giới Thiệu Loan Motor</h2>
+         <p>Chào mừng đến với Loan Motor - điểm đến hàng đầu cho những ai đam mê xe máy và muốn trải nghiệm những chuyến đi đầy phong cách và tiện nghi. Với hơn mười năm kinh nghiệm trong ngành, Loan Motor tự hào là người bạn đồng hành tin cậy, mang đến cho khách hàng những chiếc xe máy chất lượng cao từ các thương hiệu uy tín trên thế giới.</p>
+         <img src="{% static 'images/about6.png' %}" alt="gioi-thieu2">
+      </section>
+     <section>
+         <h2>Đa Dạng Sản Phẩm</h2>
+         <p>Tại Loan Motor, chúng tôi hiểu rằng mỗi khách hàng có những nhu cầu và sở thích riêng. Do đó, chúng tôi cung cấp một loạt các dòng xe đa dạng, từ xe số truyền thống, xe tay ga tiện lợi, đến những chiếc xe thể thao mạnh mẽ và xe máy điện thân thiện với môi trường. Mỗi chiếc xe tại Loan Motor đều được chọn lọc kỹ lưỡng, đảm bảo đáp ứng tiêu chuẩn cao nhất về chất lượng và hiệu suất.</p>
+         <img src="{% static 'images/about5.jpg' %}" alt="da-dang">
+      </section>
+     <section>
+         <h2>Dịch Vụ Khách Hàng Xuất Sắc</h2>
+         <p>Không chỉ cung cấp sản phẩm, Loan Motor còn nổi bật với dịch vụ khách hàng xuất sắc. Đội ngũ tư vấn của chúng tôi luôn sẵn lòng hỗ trợ bạn chọn ra chiếc xe phù hợp nhất với phong cách và ngân sách của bạn. Ngoài ra, chúng tôi cung cấp dịch vụ bảo hành, bảo dưỡng và sửa chữa xe máy, đảm bảo rằng chiếc xe của bạn luôn ở trong tình trạng tốt nhất.</p>
+         <img src="{% static 'images/about1.png' %}" alt="dich-vu">
+      </section>
+     <section>
+         <h2>Cam Kết về Chất Lượng và Giá Trị</h2>
+         <p>Loan Motor cam kết mang đến cho khách hàng những sản phẩm và dịch vụ tốt nhất. Từ việc lựa chọn những mẫu xe mới nhất, chất lượng nhất, đến việc cung cấp các phụ tùng chính hãng và dịch vụ hậu mãi chuyên nghiệp, mọi nỗ lực của chúng tôi đều nhằm mục đích tối đa hóa sự hài lòng của khách hàng.</p>
+         <img src="{% static 'images/about4.jpg' %}" alt="cam-ket">
+      </section>
+     <section>
+         <h2>Một Cộng Đồng Đam Mê Xe Máy</h2>
+         <p>Tại Loan Motor, chúng tôi không chỉ bán xe - chúng tôi xây dựng cộng đồng. Với các sự kiện thường niên, cuộc thi lái xe, và các buổi gặp gỡ cộng đồng, chúng tôi tạo điều kiện để những người đam mê xe máy có thể chia sẻ kinh nghiệm, kiến thức và niềm đam mê của mình.</p>
+         <img src="{% static 'images/about5.jpg' %}" alt="cong-dong">
+      </section>
+     <section>
+      <!-- about -->
+         <h2>Kết Luận</h2>
+         <p>Hãy đến với Loan Motor để trải nghiệm sự khác biệt trong mỗi chuyến đi - nơi mà chất lượng, phong cách, và sự hài lòng của khách hàng là ưu tiên hàng đầu của chúng tôi. Chúng tôi mong chờ được chào đón bạn tại các showroom của Loan Motor trên khắp đất nước.</p>
+         <img src="{% static 'images/about8.png' %}" alt="ket-luan">
+      </section>
+{% endblock content %}
