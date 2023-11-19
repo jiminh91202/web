@@ -1,8 +1,10 @@
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect 
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import *
-from .forms import RegistrationForm
+from .forms import *
+from django.contrib.auth import authenticate, login as auth_login
 
 
 # Create your views here.
@@ -21,10 +23,6 @@ def contact(request):
 
 def homepage(request):
     template = loader.get_template('homepage.html')
-    return HttpResponse(template.render())
-
-def login(request):
-    template = loader.get_template('login.html')
     return HttpResponse(template.render())
 
 def register(request):
@@ -56,3 +54,17 @@ def register(request):
             form.save()
             return HttpResponseRedirect('/')
     return render(request, 'register.html', {'form': form})
+
+def login(request):  
+    form = LoginForm()
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            return redirect('homepage')
+        else:
+            return redirect('login')
+    else:
+        return render(request,'login.html',{'form' : form })
