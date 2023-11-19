@@ -10,15 +10,13 @@
          <div id="{{ brand.name }}" class="motorbike-list">
             {% for motorbike in brand.motorbike_set.all %}
             <div class="motorbike-item">
-               <a href="{% url 'details' id=motorbike.ID %}">{{ motorbike.name }}</a>
+               <a href="{% url 'details' id=motorbike.id %}">{{ motorbike.name }}</a>
             </div>
             {% endfor %}
          </div>
       </div>
       {% endfor %}
    </div>
-   <!-- end portfolio -->
-   <!-- Javascript files-->
    <script>
       function showMotorbikes(brand) {
           var motorbikeLists = document.getElementsByClassName('motorbike-list');
