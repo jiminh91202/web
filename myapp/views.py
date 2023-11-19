@@ -41,7 +41,7 @@ def news(request):
 
 
 def details(request, id):
-    motorbike = Motorbike.objects.get(ID=id)
+    motorbike = Motorbike.objects.get(id=id)
     template = loader.get_template('details.html')
     context = {
         'motorbike': motorbike,
