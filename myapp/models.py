@@ -10,10 +10,12 @@ class Customer(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=255)
+    ID = models.AutoField(primary_key=True)
     def __str__(self):
         return self.name
 
 class Motorbike(models.Model):
+    ID = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     price = models.IntegerField()
@@ -35,6 +37,7 @@ class Motorbike(models.Model):
 
 
 class Order(models.Model):
+    ID = models.AutoField(primary_key=True)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     motorbike = models.ForeignKey(Motorbike, on_delete=models.CASCADE)
     order_date = models.DateField()

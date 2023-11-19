@@ -34,18 +34,9 @@ class RegistrationForm(forms.ModelForm):
         raise forms.ValidationError("Tài khoản đã tồn tại")
 
     def save(self, commit=True):
-        user = User.objects.create_user(
-            username=self.cleaned_data['username'], 
-            email=self.cleaned_data['email'], 
-            password=self.cleaned_data['password1']
-        )
-        customer = Customer(user=user)  # Tạo một đối tượng Customer thông thường, không phải superuser
+        user = User.objects.create_user(username=self.cleaned_data['username'], email=self.cleaned_data['email'], password=self.cleaned_data['password1'])
+        customer = super(RegistrationForm, self).save(commit=False)
+        customer.user = user
         if commit:
             customer.save()
         return customer
-
-
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=65)
-    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
-    remember_me = forms.BooleanField(required=False)

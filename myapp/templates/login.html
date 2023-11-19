@@ -16,14 +16,18 @@
             {% csrf_token %}
             <h1>Đăng nhập</h1>
             <div class="input-box">
-                {{form.username}}
+                {{ form.username }}
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                {{form.password}}
+                {{ form.password }}
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            <button type="submit" class="btn">Đăng nhập</button>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="{{ form.remember_me.name }}" id="{{ form.remember_me.id }}">Ghi nhớ đăng nhập</label>
+            </div>
+            <button type="submit" class="btn">Đăng ký</button>
             <div class="register-link">
                 <p>Chưa có tài khoản? <a 
                 href="{% url 'register' %}">Đăng ký</a></p>

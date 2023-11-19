@@ -17,22 +17,27 @@
             {% csrf_token %}
             <h1>Đăng ký</h1>
             <div class="input-box">
-                <label for="{{ form.username.id_for_label }}"></label>
+                <label for="{{ form.username.id_for_label }}">Tài khoản:</label>
                 {{ form.username }}
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <label for="{{ form.password1.id_for_label }}"></label>
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                <label for="{{ form.password1.id_for_label }}">Mật khẩu:</label>
                 {{ form.password1 }}
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="input-box">
-                <label for="{{ form.password2.id_for_label }}"></label>
+                <label for="{{ form.password2.id_for_label }}">Nhập lại mật khẩu:</label>
                 {{ form.password2 }}
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="input-box">
-                <label for="{{ form.phone.id_for_label }}"></label>
+                <label for="{{ form.phone.id_for_label }}">Điện thoại:</label>
                 {{ form.phone }}
                 <i class='bx bxs-phone'></i>
             </div>
