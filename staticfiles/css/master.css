@@ -1,0 +1,22 @@
+
+.email form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.email form input[type="text"] {
+    width: 120px; /* Thay đổi giá trị này để điều chỉnh chiều rộng */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.email form input[type="submit"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
