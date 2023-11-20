@@ -1046,7 +1046,7 @@ ul.social_icon li a:hover {
      margin: 90px 0;
 }
 
-}
+
 .brand-list {
     display: flex;
     justify-content: space-between;
@@ -1068,7 +1068,30 @@ ul.social_icon li a:hover {
 .motorbike-list {
     display: none;
 }
+
 .motorbike-item {
     font-size: 16px;
     margin-bottom: 10px;
 }
+
+.motorbike {
+     background-color: #f9f9f9;
+     border: 1px solid #ddd;
+     padding: 15px;
+     margin-bottom: 10px;
+     border-radius: 5px;
+     transition: box-shadow .3s ease;
+ }
+ 
+ .motorbike:hover {
+     box-shadow: 0 0 11px rgba(33,33,33,.2); 
+ }
+ 
+ .motorbike a {
+     text-decoration: none;
+     color: black;
+ }
+ 
+ .motorbike a:hover {
+     color: #007BFF;
+ }
