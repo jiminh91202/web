@@ -1,11 +1,10 @@
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect 
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
-from .forms import RegistrationForm, LoginForm
-from django.contrib.auth import authenticate, login as auth_login
-from .models import Customer
+from .forms import *
+from django.urls import reverse
+from django.utils import timezone
 
 # Create your views here.
 def shop(request):
@@ -34,7 +33,7 @@ def news(request):
     return HttpResponse(template.render())
 
 def details(request, id):
-    motorbike = Motorbike.objects.get(id=id)
+    motorbike = Motorbike.objects.get(ID=id)
     template = loader.get_template('details.html')
     context = {
         'motorbike': motorbike,
@@ -69,3 +68,23 @@ def login(request):
     else:
         form = LoginForm()
     return render(request,'login.html',{'form' : form })
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        brands = Brand.objects.filter(name__icontains=query)
+        motorbikes = Motorbike.objects.filter(brand__in=brands)
+    else:
+        motorbikes = Motorbike.objects.all()
+    return render(request, 'search_results.html', {'motorbikes': motorbikes})
+
+def order_motorbike(request, motorbike_id):
+    motorbike = get_object_or_404(Motorbike, pk=motorbike_id)
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        user, created = User.objects.get_or_create(username=name)
+        customer, created = Customer.objects.get_or_create(user=user, phone=phone)
+        Order.objects.create(customer=customer, motorbike=motorbike, order_date=timezone.now())
+        return redirect('order_success')
+    return render(request, 'order.html', {'motorbike': motorbike})

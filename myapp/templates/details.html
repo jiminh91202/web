@@ -176,7 +176,13 @@
             Chiều cao yên : {{ motorbike.seat_height }} mm<br>
             Dung tích bình xăng : {{ motorbike.fuel_capacity }} lít<br></p>
             <p class="price">Giá: {{ motorbike.price|intcomma }}</p>
-            <a href="#" class="buy-btn">Mua ngay</a>
+            <form id="myForm">
+               <label for="fname">Tên:</label>
+               <input type="text" id="fname" name="fname">
+               <label for="phone">Số điện thoại:</label>
+               <input type="text" id="phone" name="phone"><br><br>
+             </form>
+             <a href="#" class="buy-btn" onclick="">Mua ngay</a>
 
         </div>
     </div>

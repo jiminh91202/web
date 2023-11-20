@@ -1,0 +1,11 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'order_motorbike' motorbike.ID %}">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Tên của bạn">
+    <input type="submit" value="Mua ngay">
+</form>
+
+
+{% endblock %}

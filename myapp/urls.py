@@ -16,6 +16,8 @@ urlpatterns = [
     path('service/',views.service,name="service"),
     path('about/',views.about,name="about"),
     path('news/',views.news,name="news"),
+    path('search/', views.search, name='search'),
     path('shop/details/<int:id>', views.details, name='details'),
-]
+    path('order/<int:motorbike_id>/', views.order_motorbike, name='order_motorbike'),
 
+]
