@@ -11,7 +11,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
-    background-image: url('images/img1.jpg');
+    background-image: url('../images/imgRe.jpg');
     background-size: cover;
     background-position: cover;
 }
@@ -19,14 +19,15 @@ body {
 .wrapper {
     width: 420px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
+    border: 2px solid #808080; /* Viền màu xám */
+    backdrop-filter: blur(100px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
     margin-right: 50px;
 }
+
 
 .wrapper h1{
     font-size: 36px;
@@ -46,10 +47,10 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid #808080; /* Viền màu xám */
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: #000;
     padding: 20px 45px 20px 20px;
 }
 
